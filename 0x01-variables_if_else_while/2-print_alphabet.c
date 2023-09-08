@@ -7,11 +7,11 @@
   */
 int main(void)
 {
-	int c;
-	c = 97;
-	while (c >= 122)
+	int c = 97;
+
+	while (c <= 122)
 	{
-		putchar(c--);
+		putchar(c++);
 	}
 	putchar(10);
 	return (0);
