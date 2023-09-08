@@ -12,6 +12,10 @@ int main(void)
 	while (c <= 57)
 	{
 		putchar(c++);
+		if (c == 58)
+		{
+			continue;
+		}
 		putchar(',');
 		putchar(' ');
 	}
