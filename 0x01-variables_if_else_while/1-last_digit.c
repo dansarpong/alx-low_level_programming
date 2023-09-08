@@ -7,6 +7,7 @@
   *
   *Description: check for last digit and
   *provide whether greater or less than 5
+  *
   *Return - 0 (success)
   */
 int main(void)
@@ -32,5 +33,4 @@ int main(void)
 		printf("less than 6 and not 0\n");
 	}
 	return (0);
-}
-	
+}	
