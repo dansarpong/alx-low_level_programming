@@ -9,12 +9,13 @@
 int main(void)
 {
 	int a = '0';
-	int b = '0';
+	int b;
 	int c;
 	int d;
 
 	while (a <= '9')
 	{
+		b = '0';
 		while (b <= '9')
 		{
 			c = a;
