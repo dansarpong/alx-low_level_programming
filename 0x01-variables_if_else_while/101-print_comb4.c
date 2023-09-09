@@ -18,8 +18,8 @@ int main(void)
 		while (second <= '8')
 		{
 			third = second + 1;
-			while (third <= 9)
-			{	
+			while (third <= '9')
+			{
 				putchar(first);
 				putchar(second);
 				putchar(third);
