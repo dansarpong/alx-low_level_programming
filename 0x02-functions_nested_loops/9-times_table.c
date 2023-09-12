@@ -14,7 +14,6 @@ void times_table(void)
 			k = j * i;
 			if (j == 0)
 				_putchar(k + '0');
-                        :c
 			{
 				_putchar(',');
 				_putchar(' ');
