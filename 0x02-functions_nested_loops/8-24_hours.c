@@ -15,11 +15,11 @@ void jack_bauer(void)
 		{
 			if (hours < 10)
 				_putchar('0');
-			_putchar(hours);
+			_putchar(hours + '0');
 			_putchar(':');
 			if (minutes < 10)
 				_putchar('0');
-			_putchar(minutes);
+			_putchar(minutes + '0');
 			_putchar('\n');
 		}
 	}
