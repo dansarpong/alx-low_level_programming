@@ -7,8 +7,9 @@
 int main(void)
 {
 	char *words = "_putchar";
-	
-	for (int c = 0; c < 8; c++)
+	int c;
+
+	for (c = 0; c < 8; c++)
 	{
 		_putchar(words[c]);
 	}
