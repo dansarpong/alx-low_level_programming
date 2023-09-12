@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
   * main - print _putchar
@@ -6,7 +6,12 @@
   */
 int main(0)
 {
-	printf("_putchar\n");
-
+	char *words = "_putchar";
+	
+	for (int c = 0; c < 8; c++)
+	{
+		_putchar(words[c]);
+	}
+	_putchar('\n');
 	return (0);
 }
