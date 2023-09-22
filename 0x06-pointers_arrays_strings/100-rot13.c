@@ -20,5 +20,5 @@ char *rot13(char *s)
 			s[i] = ((s[i] - 'a') + 13) % 26;
 		}
 	}
-	return (c);
+	return (s);
 }
