@@ -18,6 +18,8 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		dest[t] = src[i];
 	}
-	dest[t] = src[i];
+	if (i < n)
+		dest[t] = src[i];
+
 	return (dest);
 }
