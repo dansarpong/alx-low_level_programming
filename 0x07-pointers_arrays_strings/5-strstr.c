@@ -18,10 +18,7 @@ char *_strpbrk(char *haystack, char *needle)
 				break;
 		}
 		if (needle[j] == '\0')
-		{
-			k = i;
-			break;
-		}
+			return (s + i);
 	}
-	return (k)
+	return (0);
 }
