@@ -5,7 +5,7 @@
   * @needle: substring to find
   * Return: pointer to the beginning of the located bytes
   */
-char *_strpbrk(char *haystack, char *needle)
+char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i, j, k, l;
 
