@@ -9,7 +9,7 @@ char *_strpbrk(char *haystack, char *needle)
 {
 	unsigned int i, j, k, l;
 
-	for (i = 0; haystack[i] = '\0'; i++)
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
 		l = i;
 		for (j = 0; needle[j] != '\0'; j++, l++)
@@ -18,7 +18,7 @@ char *_strpbrk(char *haystack, char *needle)
 				break;
 		}
 		if (needle[j] == '\0')
-			return (s + i);
+			return (haystack + i);
 	}
 	return (0);
 }
