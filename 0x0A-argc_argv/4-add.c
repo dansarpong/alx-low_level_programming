@@ -9,25 +9,21 @@
   */
 int main(int argc, char *argv[])
 {
-	int res, num, i;
+	int num, digit, sum = 0;
 
-	if (argc == 1)
+	for (num = 1; num < argc; num++)
 	{
-		printf("0\n");
-		return (0);
-	}
-	i = 1;
-	while (argv[i])
-	{
-		if (argv[i] < '0' || argv[i] > '9')
+		for (digit = 0; argv[num][digit]; digit++)
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[num][digit] < '0' || argv[num][digit] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		num = atoi(argv[i]);
-		res += num;
-		i++;
+
+		sum += atoi(argv[num]);
 	}
-	printf("%d\n", res);
+	printf("%d\n", sum);
 	return (0);
 }
