@@ -9,22 +9,23 @@
   */
 int main(int argc, char *argv[])
 {
-	int res;
+	int res, num;
 
 	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
 	}
-	while (**argv)
+	while (*argv)
 	{
 		if (**argv < '0' || **argv > '9')
 		{
 			printf("Error\n");
 			return (1);
 		}
-		res += atoi(**argv);
-		**argv++;
+		num = atoi(**argv);
+		res += num;
+		*argv++;
 	}
 	printf("%d\n", res);
 	return (0);
