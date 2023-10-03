@@ -20,7 +20,7 @@ int _strlen_recursion(char *s)
   */
 char *_strdup(char *str)
 {
-	unsigned int i, len = 0;
+	unsigned int i, len;
 	char *ptr;
 
 	if (str == NULL)
@@ -30,7 +30,7 @@ char *_strdup(char *str)
 	ptr = malloc((sizeof(char) * len) + 1);
 	if (ptr == NULL)
 		return (NULL);
-
+	i = 0;
 	while (i <= len)
 	{
 		ptr[i] = str[i];
