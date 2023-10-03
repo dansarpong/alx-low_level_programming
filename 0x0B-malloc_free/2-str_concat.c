@@ -1,4 +1,4 @@
-
+#include <stdlib.h>
 /**
   * str_concat - concatenate two strings
   * @s1: first string
@@ -10,11 +10,15 @@ char *str_concat(char *s1, char *s2)
 	unsigned int len, i;
 	char *ptr;
 
-	for (i = 0; s1[i] != NULL; i++)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	for (i = 0; s1[i] != '\0'; i++)
 	{
 	}
 	len = i;
-	for (i = 0; s2[i] != NULL; i++)
+	for (i = 0; s2[i] != '\0'; i++)
 	{
 	}
 	len += i;
