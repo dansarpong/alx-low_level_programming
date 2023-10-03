@@ -20,14 +20,14 @@ int _strlen_recursion(char *s)
   */
 char *_strdup(char *str)
 {
-	unsigned int i, len;
+	unsigned int i, len = 0;
 	char *ptr;
 
 	if (str == NULL)
 		return (NULL);
 
 	len = _strlen_recursion(str);
-	ptr = (char *)malloc((sizeof(char) * len) + 1);
+	ptr = malloc((sizeof(char) * len) + 1);
 	if (ptr == NULL)
 		return (NULL);
 
