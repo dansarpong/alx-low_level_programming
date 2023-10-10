@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include "dog.h"
 
+char *_strcpy(char *dest, char *src);
+
 /**
   * new_dog - creates a new dog
   * @name: name
@@ -11,44 +13,50 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog = malloc(sizeof(dog_t));
-	char *name_cpy, *owner_cpy;
-	int name_len, owner_len, i;
 
 	if (dog == NULL)
 		return (NULL);
 
-	for (name_len = 0; name[name_len] != '\0'; name_len++)
-		;
-	for (owner_len = 0; owner[owner_len] != '\0'; owner_len++)
-		;
-	name_cpy = malloc(sizeof(char) * (name_len + 1));
-	if (name_cpy == NULL)
+	dog->name = _strcpy(dog->name, name);
+	if (dog->name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
-	owner_cpy = malloc(sizeof(char) * (owner_len + 1));
-	if (owner_cpy == NULL)
+	dog->owner = _strcpy(dog->owner, owner);
+	if (dog->owner == NULL)
 	{
-		free(name_cpy);
+		free(dog->name);
 		free(dog);
 		return (NULL);
 	}
-
-	for (i = 0; name[i] != '\0'; i++)
-	{
-		name_cpy[i] = name[i];
-	}
-	name_cpy[i] = '\0';
-	for (i = 0; owner[i] != '\0'; i++)
-	{
-		owner_cpy[i] = owner[i];
-	}
-	owner_cpy[i] = '\0';
-
-	dog->name = name_cpy;
 	dog->age = age;
-	dog->owner = owner_cpy;
 
 	return (dog);
+}
+
+
+/**
+  * _strcpy - copy string from source to destination
+  * @dest: destination pointer
+  * @src: source pointer
+  * Return: pointer to dest
+  */
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+		;
+	dest = malloc(sizeof(char) * (i + 1));
+	if (dest == NULL)
+		return (NULL);
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	dest[i] = src[i];
+	return (dest);
 }
