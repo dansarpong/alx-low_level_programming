@@ -60,17 +60,17 @@ void print_all(const char * const format, ...)
 	int i = 0, j;
 	char *sep = "";
 	fn_list func[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_string}
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string}
 	};
 
 	va_start(ap, format);
 	while (format && format[i])
 	{
 		j = 0;
-		while (j < 4 && (format[i] != func[j].symbol))
+		while (j < 4 && (format[i] != *(func[j].symbol)))
 			j++;
 		if (j < 4)
 		{
