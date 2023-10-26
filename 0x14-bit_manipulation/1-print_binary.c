@@ -6,7 +6,7 @@
   */
 void print_binary(unsigned long int n)
 {
-	unsigned int res, mask = 1;
+	unsigned int mask = 1;
 
 	if (n == 0)
 	{
@@ -20,7 +20,6 @@ void print_binary(unsigned long int n)
 	while (mask > 1)
 	{
 		mask >>= 1;
-		res = (mask & n) ? 1 : 0;
-		_putchar(res + '0');
+		_putchar((n & mask) ? 0 : 1);
 	}
 }
