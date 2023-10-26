@@ -6,8 +6,7 @@
   */
 void print_binary(unsigned long int n)
 {
-	unsigned int res;
-	int mask = 1;
+	unsigned int res, mask = 1;
 
 	while (mask < n)
 		mask <<= 1;
