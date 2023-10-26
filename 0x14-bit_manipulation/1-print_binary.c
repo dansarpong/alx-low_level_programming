@@ -8,13 +8,19 @@ void print_binary(unsigned long int n)
 {
 	unsigned int res, mask = 1;
 
-	while (mask < n)
+	if (n == 0)
+	{
+		_putchar(n + '0');
+		return;
+	}
+
+	while (mask <= n)
 		mask <<= 1;
 
-	while (mask)
+	while (mask > 1)
 	{
+		mask >>= 1;
 		res = (mask & n) ? 1 : 0;
 		_putchar(res + '0');
-		mask >>= 1;
 	}
 }
