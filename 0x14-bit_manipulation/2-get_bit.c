@@ -1,4 +1,5 @@
-#include "main.h"
+#
+nclude "main.h"
 
 /**
   * get_bit - get bit at a given index
@@ -10,10 +11,9 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int bit = 1;
 
-	bit <<= index;
-
-	if (bit > n)
+	if (index >= sizeof(n) * 8)
 		return (-1);
 
+	bit <<= index;
 	return ((n & bit) ? 1 : 0);
 }
