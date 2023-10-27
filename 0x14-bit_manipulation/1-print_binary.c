@@ -6,20 +6,8 @@
   */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1;
+	if (n > 1)
+		print_binary(n >> 1);
 
-	if (n == 0)
-	{
-		_putchar(n + '0');
-		return;
-	}
-
-	while (mask <= n)
-		mask <<= 1;
-
-	while (mask > 1)
-	{
-		mask >>= 1;
-		_putchar((n & mask) ? '1' : '0');
-	}
+	_putchar((n & 1) ? '1' : '0');
 }
