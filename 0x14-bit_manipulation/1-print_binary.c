@@ -20,6 +20,6 @@ void print_binary(unsigned long int n)
 	while (mask > 1)
 	{
 		mask >>= 1;
-		_putchar((n & mask) ? 0 : 1);
+		_putchar((n & mask) ? '1' : '0');
 	}
 }
