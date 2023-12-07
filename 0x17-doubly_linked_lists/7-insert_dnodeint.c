@@ -19,15 +19,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		cur++;
 	}
 
-	if (cur == idx)
+	if (cur != idx)
+		return (NULL);
+
+	new = add_dnodeint(&track, n);
+	if (!new)
+		return (NULL);
+	if (prev)
 	{
-		new = add_dnodeint(&track, n);
-		if (!new)
-			return (NULL);
-		if (prev)
-			prev->next = new;
+		prev->next = new;
 		new->prev = prev;
 	}
+	else
+		*h = new;
 
 	return (new);
 }
