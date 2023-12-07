@@ -12,7 +12,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *track = *h, *prev = track, *new = NULL;
 	unsigned int cur = 0;
 
-	while (cur != idx && !track)
+	while (cur != idx && track)
 	{
 		prev = track;
 		track = track->next;
@@ -21,7 +21,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (cur == idx)
 	{
-		new = add_dnodeint(track, n);
+		new = add_dnodeint(&track, n);
 		if (!new)
 			return (NULL);
 		if (prev)
